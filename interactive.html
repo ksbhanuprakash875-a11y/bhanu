@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interactive Quiz — GMU Coding Club</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>.container{max-width:900px;margin:40px auto;padding:0 16px}</style>
+</head>
+<body class="antialiased bg-white text-gray-800">
+  <div class="container">
+    <h1 class="text-2xl font-bold">Interactive: Quick Quiz</h1>
+    <p class="mt-2 text-gray-600">Try this short technical quiz to test your basics. It's client-side only and resets on submit.</p>
+
+    <form id="quizForm" class="mt-6 space-y-6" aria-labelledby="quizTitle">
+      <div class="p-4 border rounded-lg">
+        <p class="font-semibold">1. Which HTML element is used to include JavaScript?</p>
+        <fieldset class="mt-2 space-y-2" role="radiogroup" aria-label="Question 1">
+          <label class="flex items-center gap-2"><input type="radio" name="q1" value="script"> &lt;script&gt;</label>
+          <label class="flex items-center gap-2"><input type="radio" name="q1" value="js"> &lt;js&gt;</label>
+          <label class="flex items-center gap-2"><input type="radio" name="q1" value="code"> &lt;code&gt;</label>
+        </fieldset>
+      </div>
+
+      <div class="p-4 border rounded-lg">
+        <p class="font-semibold">2. Which CSS property changes text color?</p>
+        <fieldset class="mt-2 space-y-2" role="radiogroup" aria-label="Question 2">
+          <label class="flex items-center gap-2"><input type="radio" name="q2" value="color"> color</label>
+          <label class="flex items-center gap-2"><input type="radio" name="q2" value="font"> font</label>
+          <label class="flex items-center gap-2"><input type="radio" name="q2" value="background"> background</label>
+        </fieldset>
+      </div>
+
+      <div class="p-4 border rounded-lg">
+        <p class="font-semibold">3. What does CSS stand for?</p>
+        <fieldset class="mt-2 space-y-2" role="radiogroup" aria-label="Question 3">
+          <label class="flex items-center gap-2"><input type="radio" name="q3" value="cascading"> Cascading Style Sheets</label>
+          <label class="flex items-center gap-2"><input type="radio" name="q3" value="computer"> Computer Style Sheets</label>
+          <label class="flex items-center gap-2"><input type="radio" name="q3" value="creative"> Creative Style Sheets</label>
+        </fieldset>
+      </div>
+
+      <div class="p-4 border rounded-lg">
+        <p class="font-semibold">4. Which JS keyword declares a block-scoped variable?</p>
+        <fieldset class="mt-2 space-y-2" role="radiogroup" aria-label="Question 4">
+          <label class="flex items-center gap-2"><input type="radio" name="q4" value="var"> var</label>
+          <label class="flex items-center gap-2"><input type="radio" name="q4" value="let"> let</label>
+          <label class="flex items-center gap-2"><input type="radio" name="q4" value="const"> const</label>
+        </fieldset>
+      </div>
+
+      <div class="p-4 border rounded-lg">
+        <p class="font-semibold">5. Which command initializes a new Git repository?</p>
+        <fieldset class="mt-2 space-y-2" role="radiogroup" aria-label="Question 5">
+          <label class="flex items-center gap-2"><input type="radio" name="q5" value="git init"> git init</label>
+          <label class="flex items-center gap-2"><input type="radio" name="q5" value="git start"> git start</label>
+          <label class="flex items-center gap-2"><input type="radio" name="q5" value="git new"> git new</label>
+        </fieldset>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="submitQuiz" type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md">Submit</button>
+        <button id="resetQuiz" type="button" class="border px-3 py-2 rounded-md">Reset</button>
+      </div>
+
+      <div id="result" class="mt-4 text-lg font-semibold" aria-live="polite"></div>
+    </form>
+
+    <p class="mt-6"><a href="index.html" class="text-indigo-600">← Back home</a></p>
+  </div>
+      <a href="index.html" class="text-indigo-600 hover:underline">← Back home</a>
+
+  <script src="js/quiz.js"></script>
+</body>
+</html>

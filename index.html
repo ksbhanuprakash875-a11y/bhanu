@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GMU Coding Club</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-white min-h-screen font-sans">
+
+<!-- Background Video -->
+<video autoplay muted loop playsinline class="fixed top-0 left-0 w-full h-full object-cover -z-10">
+  <source src="background.mp4" type="video/mp4" />
+</video>
+
+<!-- Navbar -->
+<header class="flex justify-between items-center px-6 py-4 bg-black/50 backdrop-blur-sm fixed top-0 left-0 w-full z-20">
+  <div class="flex items-center gap-3">
+    <img src="/mnt/data/fe8d942b-9e3e-402c-9e55-053a8a23a946.jpg" alt="GMU Logo" class="w-12 h-12 object-contain rounded-full border-2 border-yellow-400" />
+    <h1 class="text-xl font-bold">GMU Coding Club</h1>
+  </div>
+  <nav class="flex gap-6">
+    <a href="index.html" class="hover:text-yellow-300 font-semibold text-yellow-400">Home</a>
+    <a href="events.html" class="hover:text-yellow-300">Events</a>
+    <a href="projects.html" class="hover:text-yellow-300">Projects</a>
+    <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+  </nav>
+  <button id="loginBtn" class="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-300">
+    Login
+  </button>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="flex flex-col lg:flex-row justify-between items-center px-10 py-40 pt-52 relative gap-10">
+  <div class="lg:w-1/2 bg-black/50 p-6 rounded-lg backdrop-blur-md text-left">
+    <h2 class="text-4xl font-bold mb-4">Welcome to GM University Coding Club</h2>
+    <p class="text-lg leading-relaxed mb-4">
+      At GM University, we foster a vibrant community of coders, developers, and technology enthusiasts. 
+      Our mission is to inspire innovation, encourage collaboration, and provide hands-on experiences 
+      that shape the future of tech.
+    </p>
+    <p class="text-lg leading-relaxed mb-4">
+      Join us for workshops, hackathons, and project collaborations where creativity meets coding. 
+      Whether you're a beginner or an expert, GMU Coding Club is the place to enhance your skills, 
+      build meaningful projects, and connect with like-minded peers.
+    </p>
+  </div>
+  <div class="lg:w-1/2 flex justify-center lg:justify-end">
+    <img src="WhatsApp Image 2025-10-12 at 12.49.11_fe78721c.jpg" 
+         alt="Coding Club" 
+         class="w-80 h-80 rounded-full object-cover border-4 border-yellow-400 shadow-lg">
+  </div>
+</section>
+
+<!-- Quiz Button Section -->
+<section class="flex justify-center my-16">
+  <a href="#" id="quizBtn"
+     class="px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg shadow-lg hover:bg-purple-500 transition">
+    🧠 Take the Interactive Quiz
+  </a>
+</section>
+
+<!-- Technical Faculty Coordinators Section -->
+<center><h1 class="text-2xl font-bold">Technical Faculty Coordinators</h1></center>
+<section class="px-10 py-20 flex justify-center gap-14">
+  <div class="text-center">
+    <img src="assets/pic1.jpg" class="w-40 h-40 rounded-full border-4 border-yellow-400 shadow-lg object-cover">
+    <p class="mt-4 font-semibold">Mr. Imran Khan<br>President – Coding Club</p>
+  </div>
+  <div class="text-center">
+    <img src="assets/pic2.jpg" class="w-40 h-40 rounded-full border-4 border-yellow-400 shadow-lg object-cover">
+    <p class="mt-4 font-semibold">Mrs. Kavyashree P.N<br>President – Coding Club</p>
+  </div>
+  <div class="text-center">
+    <img src="assets/pic3.jpg" class="w-40 h-40 rounded-full border-4 border-yellow-400 shadow-lg object-cover">
+    <p class="mt-4 font-semibold">All Secretary – Coding Club</p>
+  </div>
+</section>
+
+<!-- Login Modal -->
+<div id="loginModal" class="fixed inset-0 bg-black/70 flex items-center justify-center hidden z-30">
+  <div class="bg-white rounded-lg w-96 p-6 relative text-black">
+    <h2 class="text-2xl font-bold mb-4">Login</h2>
+    <form id="loginForm" class="space-y-4">
+      <input type="text" placeholder="Username" class="w-full border p-2 rounded">
+      <input type="password" placeholder="Password" class="w-full border p-2 rounded">
+      <button type="submit" class="w-full bg-yellow-400 text-black font-semibold py-2 rounded hover:bg-yellow-300">Login</button>
+    </form>
+    <button id="closeModal" class="absolute top-2 right-2 text-gray-700 text-xl">&times;</button>
+  </div>
+</div>
+
+<!-- Quiz Modal -->
+<div id="quizModal" class="fixed inset-0 bg-black/70 flex items-center justify-center hidden z-30">
+  <div class="bg-white rounded-lg w-96 p-6 relative text-black">
+    <h2 class="text-2xl font-bold mb-4">Interactive Quiz</h2>
+    <div id="quizContent">
+      <p id="question" class="mb-4 text-lg font-semibold"></p>
+      <div id="options" class="flex flex-col gap-2"></div>
+      <button id="nextBtn" class="mt-4 w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-500">Next</button>
+    </div>
+    <button id="closeQuizModal" class="absolute top-2 right-2 text-gray-700 text-xl">&times;</button>
+  </div>
+</div>
+
+<!-- Footer with Social Media Links -->
+<footer class="bg-black/50 backdrop-blur-sm py-8 mt-20">
+  <div class="flex flex-col items-center gap-4">
+    <p class="font-semibold text-lg">Connect with us</p>
+    <div class="flex gap-6">
+      <a href="https://facebook.com" target="_blank" class="hover:text-blue-500">Facebook</a>
+      <a href="https://linkedin.com" target="_blank" class="hover:text-blue-400">LinkedIn</a>
+      <a href="https://instagram.com" target="_blank" class="hover:text-pink-500">Instagram</a>
+    </div>
+    <p class="text-gray-400 mt-4">&copy; 2025 GM University Coding Club. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+// Login modal functionality
+const loginBtn = document.getElementById('loginBtn');
+const loginModal = document.getElementById('loginModal');
+const closeModal = document.getElementById('closeModal');
+
+loginBtn.addEventListener('click', () => {
+  loginModal.classList.remove('hidden');
+});
+
+closeModal.addEventListener('click', () => {
+  loginModal.classList.add('hidden');
+});
+
+document.getElementById('loginForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('Login Successful! (Demo)');
+  loginModal.classList.add('hidden');
+});
+
+// Quiz functionality
+const quizBtn = document.getElementById('quizBtn');
+const quizModal = document.getElementById('quizModal');
+const closeQuizModal = document.getElementById('closeQuizModal');
+const questionEl = document.getElementById('question');
+const optionsEl = document.getElementById('options');
+const nextBtn = document.getElementById('nextBtn');
+
+const quizData = [
+  { question: "What does HTML stand for?", options: ["Hyper Text Markup Language","High Text Markup Language","Hyper Tabular Markup Language","None of these"], answer: "Hyper Text Markup Language" },
+  { question: "Which language is used for styling web pages?", options: ["HTML","CSS","JavaScript","Python"], answer: "CSS" },
+  { question: "Which company developed JavaScript?", options: ["Netscape","Microsoft","Google","Apple"], answer: "Netscape" }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+// Open quiz modal
+quizBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  quizModal.classList.remove('hidden');
+  currentQuestion = 0;
+  score = 0;
+  nextBtn.textContent = "Next";
+  showQuestion();
+});
+
+// Close quiz modal
+closeQuizModal.addEventListener('click', () => {
+  quizModal.classList.add('hidden');
+});
+
+// Show question
+function showQuestion() {
+  const q = quizData[currentQuestion];
+  questionEl.textContent = q.question;
+  optionsEl.innerHTML = '';
+  q.options.forEach(option => {
+    const btn = document.createElement('button');
+    btn.textContent = option;
+    btn.className = 'bg-gray-200 p-2 rounded hover:bg-gray-300 text-left';
+    btn.addEventListener('click', () => selectAnswer(option));
+    optionsEl.appendChild(btn);
+  });
+}
+
+// Select answer
+function selectAnswer(selected) {
+  if(selected === quizData[currentQuestion].answer) score++;
+  currentQuestion++;
+  if(currentQuestion < quizData.length) {
+    showQuestion();
+  } else {
+    showResult();
+  }
+}
+
+// Show result
+function showResult() {
+  questionEl.textContent = `Your Score: ${score} / ${quizData.length}`;
+  optionsEl.innerHTML = '';
+  nextBtn.textContent = "Close";
+  nextBtn.onclick = () => quizModal.classList.add('hidden');
+}
+
+nextBtn.addEventListener('click', () => {
+  if(currentQuestion < quizData.length) showQuestion();
+});
+</script>
+
+</body>
+</html>                     

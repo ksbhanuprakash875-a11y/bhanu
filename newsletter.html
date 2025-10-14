@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GMU Coding Club</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-white min-h-screen font-sans">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="fixed top-0 left-0 w-full h-full object-cover -z-10 opacity-80">
+    <source src="assets/bg-video.mp4" type="video/mp4" />
+    <img src="assets/illustration.svg" alt="Background" />
+  </video>
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-6 py-4 bg-black/50 backdrop-blur-sm fixed top-0 left-0 w-full z-20">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo.png" alt="Club Logo" class="w-10 h-10" />
+      <h1 class="text-xl font-bold">GMU Coding Club</h1>
+    </div>
+    <nav class="flex gap-6">
+      <a href="index.html" class="hover:text-yellow-300">Home</a>
+      <a href="events.html" class="hover:text-yellow-300">Events</a>
+      <a href="projects.html" class="hover:text-yellow-300">Projects</a>
+      <a href="newsletter.html" class="hover:text-yellow-300">Newsletter</a>
+      <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+    </nav>
+    <button class="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-300">Login</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="flex justify-between items-center px-10 py-40 pt-52">
+    <div class="w-1/2 bg-black/50 p-6 rounded-lg backdrop-blur-md">
+      <h2 class="text-4xl font-bold mb-4">Welcome to GMU Coding Club</h2>
+      <p class="text-lg leading-relaxed">Our mission is to build a strong community of passionate coders, developers, and tech enthusiasts. We conduct workshops, hackathons, and project collaborations to level up your coding journey.</p>
+    </div>
+    <div class="w-1/2 flex justify-center">
+      <img src="assets/club-image.png" alt="Coding Club" class="w-3/4 rounded-lg shadow-lg">
+    </div>
+  </section>
+</body>
+</html>

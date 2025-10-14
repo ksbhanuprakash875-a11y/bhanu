@@ -1,0 +1,85 @@
+/* ✅ Background video full-screen with dark overlay + fade-in */
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -10;
+  filter: brightness(60%);
+  animation: videoFade 1.5s ease-in-out;
+}
+
+@keyframes videoFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ✅ Smooth fade-in animation for the whole page */
+body {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ✅ Navbar link hover underline animation */
+nav a {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ffd700;
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ✅ Navbar glow text effect on hover */
+nav a:hover {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* ✅ Button hover animation */
+button {
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 223, 0, 0.6);
+}
+
+/* ✅ Circular Images Glow Hover Effect */
+img.rounded-full {
+  transition: all 0.4s ease-in-out;
+}
+
+img.rounded-full:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 223, 0, 0.9);
+  border-color: #ffd700;
+}
+
+/* ✅ Title hover shine effect */
+h1, h2 {
+  transition: color 0.3s ease-in-out;
+}
+
+h1:hover, h2:hover {
+  color: #ffd700;
+  text-shadow: 0 0 15px rgba(255, 223, 0, 0.6);
+}
